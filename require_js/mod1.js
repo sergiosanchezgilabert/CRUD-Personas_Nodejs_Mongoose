@@ -7,4 +7,4 @@ exports.love = sayLove = (love) =>
 {
     console.log(love|| "There are not love!!")
 }
-
+exports.var1="mod1 .... Soy la variable var1";
