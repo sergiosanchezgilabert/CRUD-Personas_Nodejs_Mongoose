@@ -18,3 +18,24 @@ console.log(xx)
 
 mod3 = require("./mod3")
 console.log("Valor de mod3 -> "+mod3)
+
+console.log('-----------------------')
+
+const v1= require('./                                                                                                                                                                           ')
+
+v1.param1V1()
+v1.param2V1('estrellas')
+console.log('       Peeeeeerooooooooo')
+v1.param2V1('no estrellas')
+
+console.log('       ->'+v1.arrowV1('careful'))
+console.log('   O')
+console.log(v1.arrowV1())
+
+console.log('-----------------------')
+
+const {saludar}=require ('./v2')
+
+saludar()
+
+/* npm i express */
