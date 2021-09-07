@@ -21,29 +21,29 @@ app.get('/', (req, res) => {
 
 app.get('/getTodos', (req, res) => {
     var promesa = controlador.buscarTodos()
-    promesa.then((response) => res.status(200).send(response))
+    promesa.then((response) => res.send(response))
 
 })
 
 app.post('/add', function (req, res) {
     let personaNueva = req.body
     const silenceNew = new Persona({ nombre: personaNueva.nombre, apellidos: personaNueva.apellidos });
-    controlador.guardar(silenceNew).then(() => res.status(200).send(silenceNew))
+    controlador.guardar(silenceNew).then((resp ) => res.send(resp))
 })
 
 app.get('/get/:id', function (req, res) {
     let personaMod = req.body
-    controlador.getPersona(personaMod, req).then((r) => res.status(200).send(r))
+    controlador.getPersona(personaMod, req).then((r) => res.send(r))
 })
 
 app.delete('/delete/:id', function (req, res) {
     let personaMod = req.body
-    controlador.eliminar(personaMod, req).then((r) => res.status(200).send(r))
+    controlador.eliminar(personaMod, req).then((r) => res.send(r))
 })
 
 app.put('/edit/:id', function (req, res) {
     let personaMod = req.body 
-    controlador.editar(personaMod, req).then((r) => res.status(200).send(r))
+    controlador.editar(personaMod, req).then((r) => res.send(r))
 })
 
 app.listen(port, () => {

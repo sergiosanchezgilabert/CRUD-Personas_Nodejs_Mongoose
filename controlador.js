@@ -5,14 +5,16 @@ const Persona = require('./model/Persona')
 let todos
 
 var guardar = async function guardar(pers) {
-    await pers.save()
+    if (pers.nombre || pers.apellidos)
+        return await pers.save()
+    else return 'No se puede guardar esta Persona'
 }
 
 var buscarTodos = async function buscarTodos() {
     const personas = await Persona.find()
     todos = personas
 
-    if(todos.length===0){
+    if (todos.length === 0) {
         return 'La lista de Personas esta vacia'
     }
     return todos
